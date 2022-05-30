@@ -1,4 +1,4 @@
-//variables for Start Button and Timer
+var score = "Score " + 0;
 var startBtnEl = document.querySelector("#start");
 var timerBtnEl = document.querySelector("#timer");
 var answerBtnsEl = document.querySelector(".answer-text");
@@ -12,8 +12,8 @@ var hideHeader = document.querySelector("#hideHeader")
 var hideUl = document.querySelector("#hideUl")
 var hideUl2 = document.querySelector("#hideUl2")
 var headerChic = document.querySelector("#hideHeaderChic")
+var gameScore1 = document.querySelector("#gameScore1")
 
-//DOM Elements Q and A
 var questionEl = document.querySelector("#questions-to-ask");
 var answerOneButtonEl = document.querySelector("#answer-one");
 var answerTwoButtonEl = document.querySelector("#answer-two");
@@ -21,8 +21,9 @@ var answerThreeButtonEl = document.querySelector("#answer-three");
 var answerFourButtonEl = document.querySelector("#answer-four");
 
 
+gameScore1.textContent ="Score " + 0; 
+var score = "Score " + 0;
 
-//object for Q and A
 var questionAnswersObj = [{
     question: "What is not a JavaScript Primitive Data Type?",
     answer: ["Array", "String", "Boolean", "Number"],
@@ -36,7 +37,7 @@ var questionAnswersObj = [{
         correctAnswer: "Global Variable"
     }];
 
-//Main function to set the Q and A
+
 
 function loadPage(){
     
@@ -53,6 +54,7 @@ function loadPage(){
     hideHeader.hidden = false;
     hideUl.hidden = true;
     hideUl2.hidden = true;
+    
    
    
    
@@ -107,6 +109,7 @@ function checkAnswer(selectedAnswer){
     if(selectedAnswer === correctAnswer){
         alert("That's correct! You have earned 10 points!");
         score += 10;
+        gameScore1.textContent = "Score " + score; 
     } else {
         alert("That's wrong! You have earned 0 points!");
         remainingTime -= 5;
