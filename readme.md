@@ -1,12 +1,12 @@
-# Porfolio Project
+# Quiz Project
 
   ### This a quiz project where I used setInterval(for a countDown), querySelector, localStorage and an array with objects.  
 
-  ## Code used: HTLM, CSS, and Javascript.
+  ## Code used: HTLM, CSS, and JavaScript.
 
   ## Using a timer:
 
-   * implemented setinterval to countdown the time left to finish the quiz. Also, subtracted time for wrong answers
+   * implemented setInterval to countdown the remaining time left to finish the quiz. Also, subtracted time for wrong answers
    
 
   ## querySelector
@@ -19,7 +19,7 @@
 
   ## Array with Objects
 
-   * used an array with ojects to pull questions with answers
+   * used an array with objects to pull questions with answers
 
   ## CSS
 
@@ -31,7 +31,7 @@
    
 
    ## Screenshot of Project
-   ![screenshot of portfolio project]()
+   ![screenshot of JavaScript Quiz](https://github.com/RetroColossus/chicken-quiz/blob/main/assets/images/screenshot.JPG)
 
    ## Project Link:
 
