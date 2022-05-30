@@ -20,7 +20,8 @@ var answerTwoButtonEl = document.querySelector("#answer-two");
 var answerThreeButtonEl = document.querySelector("#answer-three");
 var answerFourButtonEl = document.querySelector("#answer-four");
 var alert = document.querySelector("#alert");
-
+var localStorage = document.querySelector("#localStorage")
+//var evenRow = document.querrySelector("#evenRow")
 gameScore1.textContent ="Score " + 0; 
 var score = "Score " + 0;
 
@@ -37,7 +38,7 @@ var questionAnswersObj = [{
         correctAnswer: "Global Variable"
     }];
 
-
+localStorage.textContent = 100;
 
 function loadPage(){
     
@@ -55,7 +56,7 @@ function loadPage(){
     hideUl.hidden = true;
     hideUl2.hidden = true;
     startBtnEl.hidden = false;
-    
+    evenRow.hidden = true;
    
    
    
@@ -88,6 +89,7 @@ function startQuiz(){
     hideUl.hidden = false;
     hideUl2.hidden = false;
     startBtnEl.hidden = true;
+    evenRow.hidden = false;
     setQandA()
     
 };
@@ -138,6 +140,9 @@ function finishQuiz(){
 function saveScore(){
     var initials = document.getElementById("initials-input").value;
     localStorage.setItem(score, initials);
+    localStorage.textContent = 100;
+
+
     startQuiz();
 };
 

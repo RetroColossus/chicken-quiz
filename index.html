@@ -4,38 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>JavaScript Quizinator</title>
 </head>
 <body>
+  <main class="main-container">
+    <div class="timer-btn">
+      <button id ="timer"></button>
+      <div id="gameScore1" class="game-score"></div>
+    </div>
     <header>
-        <h1  id="hideHeaderChic">Test Your JavaScript Knowledge!</h1>
-    </header>
-    <section class="hero">
-    </section>
-    <section class="timer-btn">
-        <button id ="timer">Timer</button>
-    </section>
-    <div id="gameScore1">8</div>
+        <h3  id="hideHeaderChic">Test Your JavaScript Knowledge!</h3>
+   </header>
+    </div>
     <main class="page-content">
         <section class="question-answer-wrapper" id="question-section">
-            <h2 class="question-title" id="hideHeader">Click the start button to begin the quiz!</h2>
+            <h4 class="question-title" id="hideHeader">Click the start button to begin the quiz!</h4>
                 <ul class="questions-list" id="hideUl2">
-                    <li class="question-text" id="questions-to-ask"></li>
+                <li class="question-text" id="questions-to-ask"></li>
                 </ul>
         </section>
-        <section id="answer-section">
+        <section id="answer-section" class="answers">
             <div>
                 <div class="answer-text-styling" id="hideUl">
-                    <button type="button" class="answer-text" id="answer-one"></button>
-                    <button type="button" class="answer-text" id="answer-two"></button>
-                    <button type="button" class="answer-text" id="answer-three"></button>
-                    <button type="button" class="answer-text" id="answer-four"></button>
+                <ul id="evenRow">
+                      <li><button type="button" class="answer-text" id="answer-one"></button></li>
+                      <li><button type="button" class="answer-text" id="answer-two"></button></li>
+                      <li><button type="button" class="answer-text" id="answer-three"></button></li>
+                      <li><li><button type="button" class="answer-text" id="answer-four"></button></li>
+                </ul>
                 </div>
             </div>
         </section>
         <section>
-          <button type="button" id="start">Start the Quiz!</button>
+          <button type="button" id="start"  class="startBtn">Start the Quiz!</button>
       </section>
         <section class="score-section" id="score-section" style="display: none;">
             <h2>Enter Your Initials Below to Save your Score!</h2>
@@ -46,7 +48,11 @@
         <div>
           <h3 id="alert"></h3>
         </div>
+        </main>
     </main>
+  
+    
+</main>
     <footer>
         <h6>The One and Only Crazy Chicken!</h6>
     </footer>

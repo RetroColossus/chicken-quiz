@@ -1,23 +1,52 @@
-.container {
-  display: flex;
-  justify-content: center;
-  border: 5px solid black;
-  height: 300px;
-  width: 400px;
-}
-
-.title-box{
+.main-container {
   display: flex;
   flex-direction: column;
-  margin: auto;
   justify-content: center;
-  align-items: center;
+  border: 5px solid black;
+  height: 500px;
+  width: 40%;
+ 
+
+}
+header {
+  display: flex;
 
 }
 
-h1{
+li {
+  list-style: none;
+}
+
+ .page-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+} 
+
+header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+}
+
+.timer-btn{
+
   display: flex;
   align-items: center;
+  flex-direction: column;
+  
+
+}
+
+.score-section{
+  display: flex;
+  justify-content: start;
+}
+
+.answer-text-styling {
+  display: flex;
   justify-content: center;
-  ma
+  flex-direction: column;
 }
