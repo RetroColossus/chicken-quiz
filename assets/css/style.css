@@ -13,7 +13,7 @@
   border: 5px solid black;
   height: 500px;
   width: 500px;
-  margin: auto;
+  margin: 100px auto;
  
 
 }
@@ -89,4 +89,7 @@ button {
 }
 .question-section, .questions-list{
   text-align: center;
+}
+.initials-btn {
+  margin: 10px 0px 10px 0px;
 }

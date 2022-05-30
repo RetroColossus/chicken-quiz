@@ -75,7 +75,7 @@ startBtnEl.addEventListener("click", function() {
  
 function startQuiz(){
     
-    clearInterval(quizTimer);
+    
     currentIndex = 0;
     score = 0;
     remainingTime = timerSeconds;
@@ -92,7 +92,7 @@ function startQuiz(){
     hideUl2.hidden = false;
     startBtnEl.hidden = true;
     evenRow.hidden = false;
-    clearInterval(quizTimer);
+    
     setQandA()
     
 };
