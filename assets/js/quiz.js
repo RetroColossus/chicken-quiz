@@ -19,7 +19,7 @@ var answerOneButtonEl = document.querySelector("#answer-one");
 var answerTwoButtonEl = document.querySelector("#answer-two");
 var answerThreeButtonEl = document.querySelector("#answer-three");
 var answerFourButtonEl = document.querySelector("#answer-four");
-
+var alert = document.querySelector("#alert");
 
 gameScore1.textContent ="Score " + 0; 
 var score = "Score " + 0;
@@ -54,6 +54,7 @@ function loadPage(){
     hideHeader.hidden = false;
     hideUl.hidden = true;
     hideUl2.hidden = true;
+    startBtnEl.hidden = false;
     
    
    
@@ -85,7 +86,8 @@ function startQuiz(){
     headerChic.textContent = "I'm a Crazy Chicken!";
     hideHeader.hidden = true;
     hideUl.hidden = false;
-    hideUl2.hidden = true;
+    hideUl2.hidden = false;
+    startBtnEl.hidden = true;
     setQandA()
     
 };
@@ -107,17 +109,17 @@ function checkAnswer(selectedAnswer){
 
     //check answer and increment score
     if(selectedAnswer === correctAnswer){
-        alert("That's correct! You have earned 10 points!");
+        alert.textContent= "That's correct! You have earned 10 points!";
         score += 10;
         gameScore1.textContent = "Score " + score; 
     } else {
-        alert("That's wrong! You have earned 0 points!");
+        alert.textContent= "That's wrong! You have earned 0 points!";
         remainingTime -= 5;
     };
 
     //Increment question or finish
     if(currentIndex === questionAnswersObj.length-1){
-        alert("Your final score is " + score);
+        alert.textContent = "Your final score is " + score;
         finishQuiz();
     } else {
         currentIndex++;
