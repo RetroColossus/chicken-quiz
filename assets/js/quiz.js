@@ -8,11 +8,10 @@ var score = 0;
 var initialBtnEl = document.querySelector("#initials-btn");
 var quizTimer = undefined;
 var currentIndex = 0;
-var loadPageQ = document.querySelector("#hide-btn")
-var loadPageUl = document.querySelector(".hide-ul")
-var anserAlert = document.querySelector("#alert")
-var title1 = document.querySelector("#title1")
-var scoreBox = document.querySelector("#score")
+var hideHeader = document.querySelector("#hideHeader")
+var hideUl = document.querySelector("#hideUl")
+var hideUl2 = document.querySelector("#hideUl2")
+var headerChic = document.querySelector("#hideHeaderChic")
 
 //DOM Elements Q and A
 var questionEl = document.querySelector("#questions-to-ask");
@@ -20,6 +19,7 @@ var answerOneButtonEl = document.querySelector("#answer-one");
 var answerTwoButtonEl = document.querySelector("#answer-two");
 var answerThreeButtonEl = document.querySelector("#answer-three");
 var answerFourButtonEl = document.querySelector("#answer-four");
+
 
 
 //object for Q and A
@@ -36,30 +36,10 @@ var questionAnswersObj = [{
         correctAnswer: "Global Variable"
     }];
 
-    var pageLoad = function(){
-      currentIndex = 0;
-      score = 0;
-      remainingTime = timerSeconds;
-      loadPageQ.hidden = false;
-      document.getElementById("hide-btn").remove
-      document.getElementById("score-section").style.display="none";
-      document.getElementById("question-section").style.display="block";
-      document.getElementById("answer-section").style.display="block";
-      document.getElementById("timer").style.display="block";
-      document.getElementById("initials-input").value = "";
-      document.querySelector("#timer").innerHTML = remainingTime;
-      quizTimer = setInterval(timerHandler, 1000);
-      loadPageQ.hidden = true;
-      loadPageUl.hidden = true;
-      title1.hidden = true;
-      loadPageUl.hidden = true;
-      setQandA();
-    };
-
-   
-
 //Main function to set the Q and A
-function startQuiz(){
+
+function loadPage(){
+    
     currentIndex = 0;
     score = 0;
     remainingTime = timerSeconds;
@@ -70,12 +50,45 @@ function startQuiz(){
     document.getElementById("initials-input").value = "";
     document.querySelector("#timer").innerHTML = remainingTime;
     quizTimer = setInterval(timerHandler, 1000);
-    loadPageQ.hidden = true;
-    loadPageUl.hidden = false;
-    loadPageUl.hidden = false;
+    hideHeader.hidden = false;
+    hideUl.hidden = true;
+    hideUl2.hidden = true;
+   
+   
+   
+};
+
+var hideUl2 = document.querySelector("#hideUl2")
+
+startBtnEl.addEventListener("click", function() {
+   if(startBtnEl){
+    hideHeader.hidden = true;
     setQandA();
-  };
-  
+     }
+  });
+ 
+function startQuiz(){
+    
+    
+    currentIndex = 0;
+    score = 0;
+    remainingTime = timerSeconds;
+    document.getElementById("score-section").style.display="none";
+    document.getElementById("question-section").style.display="block";
+    document.getElementById("answer-section").style.display="block";
+    document.getElementById("timer").style.display="block";
+    document.getElementById("initials-input").value = "";
+    document.querySelector("#timer").innerHTML = remainingTime;
+    quizTimer = setInterval(timerHandler, 1000);
+    headerChic.textContent = "I'm a Crazy Chicken!";
+    hideHeader.hidden = true;
+    hideUl.hidden = false;
+    hideUl2.hidden = true;
+    setQandA()
+    
+};
+
+loadPage()
 
 function setQandA(){
     answerOneButtonEl.textContent= questionAnswersObj[currentIndex].answer[0];
@@ -83,7 +96,9 @@ function setQandA(){
     answerThreeButtonEl.textContent= questionAnswersObj[currentIndex].answer [2];
     answerFourButtonEl.textContent= questionAnswersObj[currentIndex].answer [3];
     questionEl.textContent= questionAnswersObj[currentIndex].question;
+    
 };
+
 
 function checkAnswer(selectedAnswer){
     var correctAnswer = questionAnswersObj[currentIndex].correctAnswer;
