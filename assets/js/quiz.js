@@ -67,13 +67,15 @@ var hideUl2 = document.querySelector("#hideUl2")
 startBtnEl.addEventListener("click", function() {
    if(startBtnEl){
     hideHeader.hidden = true;
+    
+
     setQandA();
      }
   });
  
 function startQuiz(){
     
-    
+    clearInterval(quizTimer);
     currentIndex = 0;
     score = 0;
     remainingTime = timerSeconds;
@@ -90,6 +92,7 @@ function startQuiz(){
     hideUl2.hidden = false;
     startBtnEl.hidden = true;
     evenRow.hidden = false;
+    clearInterval(quizTimer);
     setQandA()
     
 };
@@ -141,9 +144,9 @@ function saveScore(){
     var initials = document.getElementById("initials-input").value;
     localStorage.setItem(score, initials);
     localStorage.textContent = 100;
+    clearInterval(quizTimer);
 
-
-    startQuiz();
+    loadPage();
 };
 
 var timerHandler = function() {
