@@ -35,4 +35,4 @@
 
    ## Project Link:
 
-   <https://github.com/RetroColossus/chicken-quiz/blob/main/assets/images/screenshot.JPG>
+   (https://retrocolossus.github.io/chicken-quiz/)
