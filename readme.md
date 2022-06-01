@@ -31,7 +31,7 @@
    
 
    ## Screenshot of Project
-   ![screenshot of JavaScript Quiz]([https://github.com/RetroColossus/chicken-quiz/blob/main/assets/images/screenshot.JPG](https://github.com/RetroColossus/chicken-quiz/blob/main/assets/images/chicken.dinner.JPG))
+   ![screenshot of JavaScript Quiz](https://github.com/RetroColossus/chicken-quiz/blob/main/assets/images/chicken.dinner.JPG)
 
    ## Project Link:
 
