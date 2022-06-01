@@ -13,17 +13,34 @@ var hideUl = document.querySelector("#hideUl")
 var hideUl2 = document.querySelector("#hideUl2")
 var headerChic = document.querySelector("#hideHeaderChic")
 var gameScore1 = document.querySelector("#gameScore1")
-
+//var retrievedObject = localStorage.getItem(score, initials)
 var questionEl = document.querySelector("#questions-to-ask");
 var answerOneButtonEl = document.querySelector("#answer-one");
 var answerTwoButtonEl = document.querySelector("#answer-two");
 var answerThreeButtonEl = document.querySelector("#answer-three");
 var answerFourButtonEl = document.querySelector("#answer-four");
 var alert = document.querySelector("#alert");
-var localStorage = document.querySelector("#localStorage")
+var highscore = document.querySelector("#highscore")
 //var evenRow = document.querrySelector("#evenRow")
 gameScore1.textContent ="Score " + 0; 
 var score = "Score " + 0;
+var initialsInput = document.querySelector(".score-section")
+var gameScore = document.querySelector(".game-score")
+
+//var highscoreList=[
+   //{score:"score", initials:'initials'},
+
+//var showScore = localStorage.getItem('score', 'initials');
+//highscore.textContent = showScore;
+// for (var i = 0; i < localStorage.length; i++){
+//     localStorage.getItem(localStorage.key(i));
+// }
+
+//hightscore.textContent = showScore;
+
+//var thisScore = highscore;
+
+
 
 var questionAnswersObj = [{
     question: "What is not a JavaScript Primitive Data Type?",
@@ -38,7 +55,7 @@ var questionAnswersObj = [{
         correctAnswer: "Global Variable"
     }];
 
-localStorage.textContent = 100;
+
 
 function loadPage(){
     
@@ -96,6 +113,25 @@ function startQuiz(){
     setQandA()
     
 };
+function highScore(){
+    gameScore.hidden = true
+    score.hidden = true;
+    document.getElementById("timer").style.display="none";
+    initialsInput.Hidden = true;
+    hideHeader.hidden = true;
+    hideUl.hidden = true;
+    hideUl2.hidden = true;
+    startBtnEl.hidden = true;
+    evenRow.hidden = false;
+    document.getElementById("answer-section").style.display="none";
+    headerChic.textContent = "Winner, Winner Chicken Dinner!";
+    startBtnEl.hidden = false;
+    startBtnEl.textContent = "Restart the Quiz!";
+    highscore.textContent =  "High Score':'" + "|" + localStorage.getItem(score, initials) + " " + score;
+    //score =  highscore.textContent =  "High Score" + ":" + localStorage.getItem(score, initials) + " " + score;
+    saveScore()
+    //score =  highscore.textContent =  "High Score:" + "|" + localStorage.getItem(score, initials) + " " + score;
+};
 
 loadPage()
 
@@ -138,16 +174,23 @@ function finishQuiz(){
     document.getElementById("question-section").style.display="none";
     document.getElementById("answer-section").style.display="none";
     document.getElementById("timer").style.display="none";
+    localStorage.getItem(score, initials);
 };
 
 function saveScore(){
+    highscore.textContent =  "High Score " + localStorage.getItem(score, initials) + " " + score;
     var initials = document.getElementById("initials-input").value;
+    //let userScore = { username: score, userScore: initials };
     localStorage.setItem(score, initials);
-    localStorage.textContent = 100;
+    
+   
+   // localStorage.setItem('score', 'initials', JSON.stringify(highscore))
+    console.log('saveScore()')
     clearInterval(quizTimer);
-
+    
     loadPage();
 };
+
 
 var timerHandler = function() {
     if (remainingTime > 0) {
@@ -175,3 +218,4 @@ answerFourButtonEl.addEventListener("click", function(){
     checkAnswer(answerFourButtonEl.textContent);
     });
 initialBtnEl.addEventListener("click", saveScore);
+highscore.addEventListener("click", highScore)
