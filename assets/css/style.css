@@ -101,4 +101,5 @@ button {
   margin-bottom: 10px;
   text-decoration: underline blue 3px;
   border: 2px blue;
+  cursor: pointer;
 }
