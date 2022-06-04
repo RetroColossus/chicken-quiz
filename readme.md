@@ -6,7 +6,7 @@
 
   ## About
 
-   * This a timed quiz where you have to finish in 75 seconds. 10 seconds is deducted for every wrong answer.  Your final score is the time left at the end of the quiz.  
+   * This a timed quiz where you have to finish in 75 seconds. 10 seconds are deducted for every wrong answer.  Your final score is the time left at the end of the quiz.  
    
   ## User Story
 
@@ -31,7 +31,7 @@
    
 
    ## Screenshot of Project
-   ![screenshot of JavaScript Quiz]()
+   ![screenshot of JavaScript Quiz](https://github.com/RetroColossus/chicken-quiz/blob/main/assets/images/quiz.picture.JPG)
 
    ## Project Link:
 
