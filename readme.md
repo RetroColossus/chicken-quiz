@@ -13,7 +13,7 @@
    
 
    ## Screenshot of Project
-   ![screenshot of JavaScript Quiz]()
+   ![screenshot of JavaScript Quiz](https://github.com/RetroColossus/chicken-quiz/blob/main/assets/images/quiz.picture.JPG)
 
    ## Project Link:
 
