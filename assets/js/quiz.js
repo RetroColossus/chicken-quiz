@@ -75,7 +75,7 @@ function loadPage(){
     startBtnEl.hidden = false;
     evenRow.hidden = true;
    
-   
+    clearInterval(quizTimer)
    
 };
 
@@ -84,7 +84,7 @@ var hideUl2 = document.querySelector("#hideUl2")
 startBtnEl.addEventListener("click", function() {
    if(startBtnEl){
     hideHeader.hidden = true;
-    
+    clearInterval(quizTimer)
 
     setQandA();
      }
@@ -109,7 +109,7 @@ function startQuiz(){
     hideUl2.hidden = false;
     startBtnEl.hidden = true;
     evenRow.hidden = false;
-    
+    clearInterval(quizTimer)
     setQandA()
     
 };
